@@ -1,0 +1,52 @@
+﻿<Window x:Class="JoeCoffeeStore.StockManagement.App.View.CoffeeDetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JoeCoffeeStore.StockManagement.App.View"
+        mc:Ignorable="d"
+        Title="Joe's Coffee Store" Height="400" Width="600">
+    <ScrollViewer>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Name="CoffeeNamelabel" Grid.ColumnSpan="2" Content="{Binding CoffeeName}"></Label>
+            <Image Name="CoffeeImage" Grid.Row="1" Grid.ColumnSpan="2" MaxHeight="150" MaxWidth="150"></Image>
+            <Label Grid.Row="2" Content="ID" FontWeight="Bold" ></Label>
+            <Label Grid.Row="3" Content="Description" FontWeight="Bold" ></Label>
+            <Label Grid.Row="4" Content="Price" FontWeight="Bold" ></Label>
+            <Label Grid.Row="5" Content="Stock Amount" FontWeight="Bold" ></Label>
+            <Label Grid.Row="6" Content="First time Added" FontWeight="Bold" ></Label>
+
+            <TextBox Grid.Row="2" Grid.Column="1" Name="CoffeeIdbox" Text="{Binding CoffeeID,Mode=OneWay}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="CoffeeDescrptionbox" Text="{Binding Description}"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" Name="CoffeePrincebox" Text="{Binding Price}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="1" Name="CoffeeStockAmountbox" Text="{Binding AmonutInStock}"></TextBox>
+            <TextBox Grid.Row="6" Grid.Column="1" Name="CoffeeFirstTimeAddedbox" Text="{Binding FirstAddedToStockDate}"></TextBox>
+            <TextBox Grid.Row="7" Grid.Column="1" Name="CoffeeExtraDescrbox" Text="{Binding ExtraDesription}"></TextBox>
+
+            <StackPanel Grid.Row="8">
+                <Button x:Name="SaveButton">Save</Button>
+            </StackPanel>
+            <StackPanel Grid.Row="9">
+                <Button x:Name="DeleteButton"></Button>
+            </StackPanel>
+        </Grid>    
+        
+    </ScrollViewer>
+</Window>
